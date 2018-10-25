@@ -35,19 +35,19 @@ public class NoticePopupActivity extends AppCompatActivity {
         final String code = getIntent().getStringExtra("code");
         txtText.setText(getIntent().getStringExtra("title"));
 
-        // 팝업 취소 버튼
+        // popupキャンセルボタン
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 setResult(RESULT_OK, intent);
 
-                //액티비티(팝업) 닫기
+                //アクティビティ(ポップアップ)けす
                 finish();
             }
         });
 
-        //팝업 메뉴 삭제 버튼
+        //メニューの削除ボタン
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class NoticePopupActivity extends AppCompatActivity {
                 setResult(RESULT_OK, intent);
                 Toast.makeText(getApplicationContext(),"선택 메뉴가 삭제되었습니다.", Toast.LENGTH_LONG).show();
 
-                //액티비티(팝업) 닫기
+                //アクティビティ(ポップアップ)けす
                 finish();
             }
         });
@@ -68,7 +68,8 @@ public class NoticePopupActivity extends AppCompatActivity {
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //바깥레이어 클릭시 안닫히게
+        //Popupウィンドー以外の空間クリック時、外の画面に転換されないようにする関数
+
         if(event.getAction()== MotionEvent.ACTION_OUTSIDE){
             return false;
         }
@@ -77,13 +78,13 @@ public class NoticePopupActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //안드로이드 백버튼 막기
+        //Popup時、Android 戻るボタンがクリックできないようにする関数
         return;
     }
 
 
 
-    //선택 메뉴 지우기
+    //選択メニュー消す
     class NoticeDelete extends AsyncTask<Void, Void, String> {
 
         String target;
