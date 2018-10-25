@@ -46,7 +46,7 @@ public class NoticeActivity extends AppCompatActivity {
 
         final String code = getIntent().getStringExtra("code");
 
-        //공지사항 클레스 접근
+        //お知らせのクラスアクセス
         new BackgroundTask().execute();
 
         noticeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -75,7 +75,7 @@ public class NoticeActivity extends AppCompatActivity {
 
     }
 
-//서버에서 메뉴 불러오기
+//サーバーからメニューテーブルを得る
 class BackgroundTask extends AsyncTask<Void, Void, String> {
 
     String target;
