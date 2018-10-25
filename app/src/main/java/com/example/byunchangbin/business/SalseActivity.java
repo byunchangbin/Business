@@ -47,16 +47,16 @@ public class SalseActivity extends AppCompatActivity {
         textDate = (TextView)findViewById(R.id.btnchangedate);
         findButton = (Button)findViewById(R.id.findButton);
 
-        //현재 날짜를 가져옴.
+        //現在の日付
 
         Calendar cal = new GregorianCalendar();
         mYear = cal.get(Calendar.YEAR);
         mMonth = cal.get(Calendar.MONTH);
         mDay = cal.get(Calendar.DAY_OF_MONTH);
 
-        UpdateNow();//화면에 텍스트뷰에 업데이트 해줌.
+        UpdateNow();//画面にTextViewにアップデート
 
-        //날짜별 매출 현황 조회
+        //日付別の売上現況の照会
         textDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,23 +74,23 @@ public class SalseActivity extends AppCompatActivity {
             }
         });
 
-        //주문 목록 클레스 접근
+        //注文リトスのクラスアクセス
         new BackgroundTask().execute();
 
         new SalseSum().execute();
 
     }
 
-    //날짜 대화상자 리스너 부분
+    //日付リスナー部分
 
     DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    //사용자가 입력한 값을 가져온뒤
+                    //使用者が選択した日付を得る
                     mYear = year;
                     mMonth = monthOfYear;
                     mDay = dayOfMonth;
-                    //텍스트뷰의 값을 업데이트함
+                    //画面にTextViewにアップデート
                     UpdateNow();
                 }
             };
@@ -100,7 +100,7 @@ public class SalseActivity extends AppCompatActivity {
         textDate.setText(String.format("%d-%d-%d", mYear, mMonth + 1, mDay));
     }
 
-    //주문 완료 목록
+    //注文完了リスト
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
         String target;
@@ -166,7 +166,7 @@ public class SalseActivity extends AppCompatActivity {
         }
     }
 
-    //총 매출
+    //売上
     class SalseSum extends AsyncTask<Void, Void, String> {
 
         String target;
