@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //공지사항 버튼
+        //お知らせのボタン
         NoticeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //메뉴 버튼
+        //メニューのボタン
         MenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //주문 목록 버튼
+        //注文リストのボタン
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //매출 현황 목록 버튼
+        //売上現況リストボタン
         salseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //이미지 불러오기
+    //イメージを得る
     private class ImageBack extends AsyncTask<String, Integer, Bitmap> {
         private Bitmap bmImg;
 
