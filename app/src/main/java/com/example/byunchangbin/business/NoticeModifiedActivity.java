@@ -46,11 +46,11 @@ public class NoticeModifiedActivity extends AppCompatActivity{
             code = getIntent().getStringExtra("code");
             noticeid = getIntent().getStringExtra("noticeid");
 
-            //공지사항 설명 클래스 호출
+            //お知らせの説明クラス呼び出し
             new BackgroundTask().execute();
 
 
-            //공지사항 수정 버튼
+            //お知らせの修正ボタン
             modifiedButon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -61,7 +61,7 @@ public class NoticeModifiedActivity extends AppCompatActivity{
                 }
             });
 
-            //공지사항 삭제 버튼
+            //お知らせの削除ボタン
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -80,7 +80,7 @@ public class NoticeModifiedActivity extends AppCompatActivity{
 
 
 
-//DB에서 해당 공지사항 설명 불러오기
+//DBでコードに合うお知らせ事項の説明テーブルを得る。
 class BackgroundTask extends AsyncTask<Void, Void, String> {
 
     String target;
