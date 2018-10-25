@@ -54,7 +54,7 @@ public class MenuModifiedActivity extends AppCompatActivity {
         final String menuname = getIntent().getStringExtra("menuname");
 
 
-        //메뉴 이미지 불러오기
+        //メニューイメージを得る
         task = new back();
         try {
             bpm = task.execute(imgUrl+ filename + ".jpg").get();
@@ -64,7 +64,7 @@ public class MenuModifiedActivity extends AppCompatActivity {
         }
 
 
-        //메뉴 수정 버튼
+        //メニュー修正ボタン
         modifiedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +74,7 @@ public class MenuModifiedActivity extends AppCompatActivity {
             }
         });
 
-        //메뉴 삭제 버튼
+        //メニュー削除ボタン
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +88,7 @@ public class MenuModifiedActivity extends AppCompatActivity {
 
     }
 
-    //서버에서 해당 이미지 불러오기
+    //サーバーからコードと合うイメージを得る
     private class back extends AsyncTask<String, Integer, Bitmap> {
         private Bitmap bmImg;
 
@@ -111,7 +111,7 @@ public class MenuModifiedActivity extends AppCompatActivity {
         }
     }
 
-    //선택 메뉴 수정
+    //選択メニュー修正
     class MenuModified extends AsyncTask<Void, Void, String> {
 
         String target;
